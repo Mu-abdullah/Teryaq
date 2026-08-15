@@ -24,11 +24,13 @@ void selectData({
       actionTextStyle: customTextStyle(context),
       dateTimePickerTextStyle: customTextStyle(context),
     ),
-    buttonContent: const AppText(
+    buttonBuilder: (w ,c){
+      return AppText(
       LangKeys.chooseDate,
       color: Colors.white,
       textAlign: TextAlign.center,
-    ),
+    );
+    }  ,
     buttonStyle: const BoxDecoration(
       color: Colors.black,
       borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -30,7 +30,7 @@ environment:
 dependencies:
   bloc: ^9.0.0
   bottom_picker: ^4.1.1
-  connectivity_plus: ^6.1.4
+  connectivity_plus: ^7.3.1
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dio: ^5.8.0+1
@@ -46,15 +46,15 @@ dependencies:
   hugeicons: ^0.0.11
   intl: ^0.20.2
   lottie: ^3.3.1
-  open_file: ^3.5.10
+  open_file: ^4.0.0
   path_provider: ^2.1.5
-  permission_handler: ^12.0.1
+  permission_handler: ^13.0.1
   shared_preferences: ^2.5.3
   shimmer: ^3.0.0
   smooth_page_indicator: ^2.0.1
   speech_to_text: ^7.0.0
   supabase_flutter: ^2.9.0
-  syncfusion_flutter_xlsio: ^32.2.8
+  syncfusion_flutter_xlsio: ^34.2.3
   universal_html: ^2.2.4
   url_launcher: ^6.3.1
 

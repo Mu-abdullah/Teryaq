@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:main_app/core/language/lang_keys.dart';
 import 'package:flutter/material.dart';
@@ -11,19 +10,21 @@ class SpeechCubit extends Cubit<SpeechState> {
   final stt.SpeechToText _speech = stt.SpeechToText();
   Timer? _silenceTimer;
   final double _silenceThreshold = -30.0;
-  final Duration _silenceDuration = Duration(seconds: 2);
+  final Duration _silenceDuration = const Duration(seconds: 2);
 
   SpeechCubit()
-    : super(
-        SpeechState(
-          isListening: false,
-          recognizedText: 'Initializing...',
-          selectedLanguage: 'en-US',
-        ),
-      ) {
+      : super(
+          SpeechState(
+            isListening: false,
+            recognizedText: 'Initializing...',
+            selectedLanguage: 'en-US',
+          ),
+        ) {
     _initSpeech();
   }
+
   final diagnosis = TextEditingController();
+
   void textToEdit() {
     diagnosis.text = state.recognizedText;
   }
@@ -67,7 +68,7 @@ class SpeechCubit extends Cubit<SpeechState> {
             emit(state.copyWith(recognizedText: result.recognizedWords));
           }
         },
-        localeId: state.selectedLanguage,
+        localeId: state.selectedLanguage,  // ✅ التعديل هنا
         onSoundLevelChange: (level) {
           if (!isClosed) {
             _onSoundLevelChange(level);

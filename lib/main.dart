@@ -14,8 +14,10 @@ import 'main_doctor/main_doctor.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariable.instance.init(envType: EnvTypeEnum.prod);
+  await SupabaseInit.initSupabase();
+
   await ConnectionController.instance.init();
-  await SupabaseInit().initSupabase();
+
   await SharedPref.init();
 
   await requestMicrophonePermission();
