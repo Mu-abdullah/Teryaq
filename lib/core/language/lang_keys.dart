@@ -19,6 +19,9 @@ class LangKeys {
   static const String error = 'error';
   static const String unavailable = 'unavailable';
   static const String comingSoon = 'comingSoon';
+  static const String facingTrouble = 'facingTrouble';
+  static const String facingTroubleDescription = 'facingTroubleDescription';
+
 
 
   ///[AUTH SCREEN]

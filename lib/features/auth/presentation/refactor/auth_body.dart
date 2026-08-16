@@ -9,6 +9,7 @@ import '../cubits/auth_cubit/auth_cubit.dart';
 import '../widgets/app_name.dart';
 import '../widgets/auth_lang_btn.dart';
 import '../widgets/auth_text_form.dart';
+import '../views/facing_trouble.dart';
 
 class AuthBody extends StatelessWidget {
   const AuthBody({super.key});
@@ -33,6 +34,7 @@ class AuthBody extends StatelessWidget {
                     AppName(),
                     AuthTextForm(cubit: cubit),
                     AppButton(text: LangKeys.login, onTap: () {}),
+                    FaceingTrouble(),
                   ],
                 ),
               ),
