@@ -10,7 +10,9 @@ class RoutesNames {
   static const String adminHome = 'adminHome';
   static const String newClient = 'newClient';
   static const String test = 'test';
-  
+
+  static const String authScreen = 'AuthScreen';
+
   /// [Doctor screens]
   static const String doctorHome = 'doctorHome';
   static const String settingsScreen = 'settingsScreen';

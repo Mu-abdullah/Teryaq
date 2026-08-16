@@ -37,9 +37,8 @@ class _MainDoctorState extends State<MainDoctor> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       valueListenable: ConnectionController.instance.isConnected,
-      builder:
-          (_, isConnected, _) =>
-              isConnected ? _buildConnectedApp() : _buildDisconnectedApp(),
+      builder: (_, isConnected, _) =>
+          isConnected ? _buildConnectedApp() : _buildDisconnectedApp(),
     );
   }
 
@@ -54,7 +53,7 @@ class _MainDoctorState extends State<MainDoctor> {
         builder: (context, language) {
           _syncLocaleWithLanguage(language);
           return _buildMaterialApp(
-            initialRoute: RoutesNames.auth,
+            initialRoute: RoutesNames.authScreen,
             builder: _appBuilder,
           );
         },
@@ -109,7 +108,7 @@ class _MainDoctorState extends State<MainDoctor> {
   }
 
   String _getConnectedInitialRoute() {
-    return RoutesNames.adminHome;
+    return RoutesNames.authScreen;
   }
 
   ThemeData get _appTheme => ThemeData(

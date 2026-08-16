@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthServices {
@@ -8,11 +9,15 @@ class AuthServices {
   Future<AuthResponse> signUp({
     required String email,
     required String password,
+    String? signUpMsg,
   }) async {
     final response = await supabase.auth.signUp(
       email: email,
       password: password,
     );
+    if (response.user != null && response.session == null) {
+      debugPrint(signUpMsg);
+    }
     return response;
   }
 

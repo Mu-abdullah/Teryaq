@@ -4,13 +4,14 @@ import '../../features/admin/admin_home/presentation/views/admin_home.dart';
 import '../../features/admin/new_client/presentation/view/new_client_screen.dart';
 import '../../features/admin/test/test_screen.dart';
 import '../../features/assistant/presentation/views/assistant_screen.dart';
+import '../../features/auth/presentation/views/auth_screen.dart';
 import '../../features/doctor/doctor_home/presentation/views/doctor_home.dart';
-import '../../features/doctor/profile_page/presentation/views/profile_page.dart';
-import '../../features/doctor/search_screen/presentation/views/search_screen.dart';
 import '../../features/doctor/messenger/presentation/views/messenger_screen.dart';
 import '../../features/doctor/messenger/presentation/widgets/chat_screen/chat_screen.dart';
 import '../../features/doctor/patient_list_screen/presentation/views/patient_list_screen.dart';
 import '../../features/doctor/patient_screen/presentation/views/patient_screen.dart';
+import '../../features/doctor/profile_page/presentation/views/profile_page.dart';
+import '../../features/doctor/search_screen/presentation/views/search_screen.dart';
 import '../../features/doctor/settings_page/presentation/views/settings_page.dart';
 import '../../features/doctor/visits_screen/presentation/views/visits_screen.dart';
 import '../../features/user/user_home/presentation/views/user_patient_screen.dart';
@@ -55,6 +56,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     case RoutesNames.test:
       return BaseRoute(page: const TestScreen());
+    case RoutesNames.authScreen:
+      return BaseRoute(page: const AuthView());
 
     /////////
     /////////[doctor feature routes]////////////
