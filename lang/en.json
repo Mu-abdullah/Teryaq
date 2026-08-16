@@ -19,6 +19,7 @@
     "comingSoon": "Coming soon",
     "facingTrouble": "Facing Trouble?",
     "facingTroubleDescription": "If you are facing any issues while logging in, please contact the support team via WhatsApp for assistance.",
+    
     "####AuthScreen": "",
     "login": "Login",
     "email": "Email",
@@ -27,6 +28,11 @@
     "enterYourEmail": "Enter your email",
     "enterYourPassword": "Enter your password",
     "wrongEmailOrPassword": "Invalid email or password",
+    "userNotFound":"User not found",
+    "invalidLoginCredentials":"Invalid login credentials",
+    "somethingWentWrong":"Something went wrong",
+    "writeEmailCorrect":"Please enter a valid email address",
+    
     "####AdminScreen": "",
     "admin": "Admin",
     "adminMode": "Admin Mode",
@@ -39,6 +45,7 @@
     "client": "Client",
     "newClient": "New Client",
     "test": "Test",
+
     "####newClientScreen": "",
     "personalInformation": "Personal Information",
     "name": "Name",
@@ -53,10 +60,14 @@
     "university": "University",
     "graduation": "Graduation",
     "city": "City",
+
+    
     "####ChatScreen": "",
     "message": "Message",
     "send": "Send",
     "typeYourMessage": "Type your message...",
+
+
     "####HomeScreen": "",
     "search": "Search",
     "welcome": "Welcome,",
@@ -65,11 +76,15 @@
     "account": "Account",
     "settings": "Settings",
     "messenger": "Messenger",
+
+
     "####DoctorHomeScreen": "",
     "entered": "Entered",
     "waiting": "Waiting",
     "completed": "Completed",
     "nextVisit": "Next Visit",
+
+
     "####DoctorSettingsScreen": "",
     "profile": "Profile",
     "preferences": "Preferences",
@@ -78,10 +93,15 @@
     "terms": "Terms and Conditions",
     "privacy": "Privacy Policy",
     "logout": "Log Out",
+
+
     "####DoctorSearchScreen": "",
     "patients": "Patients",
+
     "####DoctorProfileScreen": "",
     "about": "About",
+
+
     "####DoctorPatientScreen": "",
     "patientId": "Patient ID",
     "visitHistory": "Visit History",
@@ -95,6 +115,8 @@
     "treatment": "Treatment",
     "pressAndStart": "Press the button and start speaking",
     "speechNotAvailable": "Speech recognition not available",
+
+
     "####NewPatientScreen": "",
     "registerNewPatient": "Register New Patient",
     "patientName": "Patient Name",
@@ -106,8 +128,12 @@
     "male": "Male",
     "female": "Female",
     "register": "Register",
+
+
     "####StudentScreen": "",
     "upgrade": "Upgrade",
+
+
     "####AssistantScreen": "",
     "clinic": "Clinic",
     "dr": "Dr."

@@ -32,6 +32,10 @@ class LangKeys {
   static const String enterYourEmail = 'enterYourEmail';
   static const String enterYourPassword = 'enterYourPassword';
   static const String wrongEmailOrPassword = 'wrongEmailOrPassword';
+  static const String userNotFound = 'userNotFound';
+  static const String invalidLoginCredentials = 'invalidLoginCredentials';
+  static const String somethingWentWrong = 'somethingWentWrong';
+  static const String writeEmailCorrect = 'writeEmailCorrect';
 
   ////[ADMIN SCREEN]
   static const String admin = 'admin';

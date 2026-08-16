@@ -28,6 +28,10 @@
     "enterYourEmail":"أدخل بريدك الإلكتروني",
     "enterYourPassword":"أدخل كلمة المرور",
     "wrongEmailOrPassword":"البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    "userNotFound":"المستخدم غير موجود",
+    "invalidLoginCredentials":"بيانات تسجيل الدخول غير صحيحة",
+    "somethingWentWrong":"حدث خطأ ما",
+    "writeEmailCorrect":"يرجى كتابة بريد إلكتروني صحيح",
 
     "####AdminScreen":"",
     "admin":"ادمن",

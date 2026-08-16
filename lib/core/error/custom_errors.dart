@@ -1,3 +1,7 @@
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../language/lang_keys.dart';
+
 enum ErrorType { network, graphql, noData, parsing, unknown }
 
 class CustomError {
@@ -19,4 +23,25 @@ class CustomError {
 
 class AuthError extends CustomError {
   AuthError(super.message);
+}
+
+class AuthExceptionHandler {
+  static String handle(dynamic error) {
+    if (error is AuthException || error is AuthApiException) {
+      return _mapMessage((error as dynamic).message);
+    }
+    return LangKeys.somethingWentWrong;
+  }
+
+  static String _mapMessage(String message) {
+    switch (message.toLowerCase()) {
+      case 'invalid login credentials':
+        return LangKeys.invalidLoginCredentials;
+      case 'user not found':
+        return LangKeys.userNotFound;
+
+      default:
+        return LangKeys.somethingWentWrong;
+    }
+  }
 }
