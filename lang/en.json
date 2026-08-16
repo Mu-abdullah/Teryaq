@@ -1,5 +1,5 @@
 {   
-    "appName": "",
+    "appName": "Teryaq",
     "loading": "Loading...",
     "noInternet": "No internet connection",
     "tryToConnect":  "Try to connect",
@@ -18,6 +18,16 @@
     "unavailable": "Unavailable",
     "comingSoon": "Coming soon",
 
+    "####AuthScreen":"",
+    "login":"Login",
+    "email":"Email",
+    "password":"Password",
+    "forgotPassword":"Forgot Password?",
+    "enterYourEmail":"Enter your email",
+    "enterYourPassword":"Enter your password",
+    "wrongEmailOrPassword":"Invalid email or password",
+
+    
     "####AdminScreen":"",
     "admin":"Admin",
     "adminMode":"Admin Mode",
@@ -68,8 +78,6 @@
 
     "####DoctorSettingsScreen":"",
     "profile":"Profile",
-    "email":"Email",
-    "password":"Password",
     "preferences":"Preferences",
     "support":"Support",
     "contact":"Contact Us",

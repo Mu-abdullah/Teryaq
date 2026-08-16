@@ -1,5 +1,5 @@
 {   
-    "appName": "",
+    "appName": "ترياق",
     "loading": "جار التحميل...",
     "noInternet": "لا يوجد اتصال بالإنترنت",
     "tryToConnect": "حاول الاتصال",
@@ -17,6 +17,15 @@
     "noDataFound": "لا توجد بيانات",
     "unavailable": "غير متوفر",
     "comingSoon": "قريبا",
+
+    "####AuthScreen":"",
+    "login":"تسجيل الدخول",
+    "email":"البريد الإلكتروني",
+    "password":"كلمة المرور",
+    "forgotPassword":"نسيت كلمة المرور؟",
+    "enterYourEmail":"أدخل بريدك الإلكتروني",
+    "enterYourPassword":"أدخل كلمة المرور",
+    "wrongEmailOrPassword":"البريد الإلكتروني أو كلمة المرور غير صحيحة",
 
     "####AdminScreen":"",
     "admin":"ادمن",
@@ -69,8 +78,6 @@
 
     "####DoctorSettingsScreen":"",
     "profile":"الملف الشخصي",
-    "email":"البريد الإلكتروني",
-    "password":"كلمة المرور",
     "preferences":"التفضيلات",
     "support":"الدعم",
     "contact":"اتصل بنا",

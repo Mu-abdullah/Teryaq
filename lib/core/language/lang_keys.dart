@@ -20,6 +20,16 @@ class LangKeys {
   static const String unavailable = 'unavailable';
   static const String comingSoon = 'comingSoon';
 
+
+  ///[AUTH SCREEN]
+  static const String login = 'login';
+  static const String email = 'email';
+  static const String password = 'password';
+  static const String forgotPassword = 'forgotPassword';
+  static const String enterYourEmail = 'enterYourEmail';
+  static const String enterYourPassword = 'enterYourPassword';
+  static const String wrongEmailOrPassword = 'wrongEmailOrPassword';
+
   ////[ADMIN SCREEN]
   static const String admin = 'admin';
   static const String adminMode = 'adminMode';
@@ -71,8 +81,6 @@ class LangKeys {
 
   /// [DOCTOR Settings SCREEN]
   static const String profile = 'profile';
-  static const String email = 'email';
-  static const String password = 'password';
   static const String preferences = 'preferences';
   static const String support = 'support';
   static const String contact = 'contact';

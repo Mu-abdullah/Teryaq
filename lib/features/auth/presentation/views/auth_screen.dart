@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/services/get_it/git_it.dart';
+import '../../data/repo/auth_repo.dart';
 import '../cubits/auth_cubit/auth_cubit.dart';
 import '../refactor/auth_body.dart';
 
@@ -9,7 +11,7 @@ class AuthView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (context) => AuthCubit(), child: AuthBody());
+    var loc = locator<AuthRepo>();
+    return BlocProvider(create: (context) => AuthCubit(loc), child: AuthBody());
   }
 }
-
