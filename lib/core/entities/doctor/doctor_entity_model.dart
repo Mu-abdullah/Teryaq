@@ -1,7 +1,7 @@
 class DoctorEntity {
   final String? dId;
   final DateTime? dCreatedAt;
-  final String? dName;
+  final String dName;
   final String? dAbout;
   final String? dSpecialization;
   final String? dPhone;
@@ -9,11 +9,12 @@ class DoctorEntity {
   final bool? dVerified;
   final String? dImage;
   final String role;
+  final String? userId;
 
-  DoctorEntity({
+  const DoctorEntity({
     this.dId,
     this.dCreatedAt,
-    this.dName,
+    required this.dName,
     this.dAbout,
     this.dSpecialization,
     this.dPhone,
@@ -21,5 +22,6 @@ class DoctorEntity {
     this.dVerified,
     this.dImage,
     this.role = 'doctor',
+    this.userId,
   });
 }

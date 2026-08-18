@@ -1,18 +1,17 @@
-import 'package:main_app/core/extextions/extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:main_app/core/extextions/extentions.dart';
 
 import '../../../../../core/language/lang_keys.dart';
 import '../../../../../core/routes/routes_name.dart';
 import '../../../../../core/style/color/app_color.dart';
-import '../../../../../core/style/statics/app_statics.dart';
 import '../../../../../core/style/custom_widgets/custom_app_bar.dart';
-import '../cubits/bottom_bar_cubit/bottom_bar_cubit.dart';
+import '../../../../../core/style/statics/app_statics.dart';
 
 class DoctorAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DoctorAppBar({super.key, required this.cubit});
+  const DoctorAppBar({super.key, required this.isBack});
 
-  final DrHomeCubit cubit;
+  final bool isBack;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class DoctorAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.white,
       elevation: 5,
       title: LangKeys.doctor, //cubit.titles[cubit.currentIndex],
-      isBack: cubit.isAdmin,
+      isBack: isBack,
       actions: [
         IconButton(
           onPressed: () => context.pushNamed(RoutesNames.messengerScreen),

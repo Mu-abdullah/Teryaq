@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 
 import '../../../features/auth/data/repo/auth_repo.dart';
+import '../../../features/doctor/doctor_home/data/repo/d_home_repo.dart';
 import '../graph_ql/graph_ql.dart';
 import '../supabase/auth_service/auth_services.dart';
 import '../supabase/data_base_services.dart';
@@ -14,6 +15,7 @@ void setupLocator() {
 
 void _registerRepositories() {
    locator.registerLazySingleton(() => AuthRepo(locator()));
+   locator.registerLazySingleton(() => DHomeRepo(locator()));
 }
 
 void _registerServices() {

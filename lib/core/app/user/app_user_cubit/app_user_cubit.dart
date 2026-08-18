@@ -14,10 +14,8 @@ class AppUserCubit extends Cubit<AppUserState> {
 
   static AppUserCubit get(BuildContext context) => BlocProvider.of(context);
 
-  String get empID => SharedPref.getData(key: PrefKeys.empID);
-  String get userID => SharedPref.getData(key: PrefKeys.userId);
-  String get compId => SharedPref.getData(key: PrefKeys.companyID);
-  String get role => SharedPref.getData(key: PrefKeys.role);
+    String get doctorModel => SharedPref.getData(key: PrefKeys.doctorModel) ?? '';
+ 
 
   Future<void> logout() async {
     // repo.logout();

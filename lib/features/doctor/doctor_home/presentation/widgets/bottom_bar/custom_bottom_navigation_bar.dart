@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/style/color/app_color.dart';
 import '../../../../../../core/style/statics/app_statics.dart';
-import '../../cubits/bottom_bar_cubit/bottom_bar_cubit.dart';
+import '../../cubits/dr_home_cubit/dr_home_cubit.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   const CustomBottomNavigationBar({super.key, required this.cubit});
