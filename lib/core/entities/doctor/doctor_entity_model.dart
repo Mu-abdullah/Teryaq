@@ -8,6 +8,7 @@ class DoctorEntity {
   final String? dEmail;
   final bool? dVerified;
   final String? dImage;
+  final String role;
 
   DoctorEntity({
     this.dId,
@@ -19,5 +20,6 @@ class DoctorEntity {
     this.dEmail,
     this.dVerified,
     this.dImage,
+    this.role = 'doctor',
   });
 }
