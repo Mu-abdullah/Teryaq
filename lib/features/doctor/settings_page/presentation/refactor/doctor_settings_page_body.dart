@@ -14,11 +14,12 @@ class DoctorSettingsPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<DoctorSettingCubit, DoctorSettingState>(
       builder: (context, state) {
+        var cubit = DoctorSettingCubit.get(context);
         return Column(
           spacing: 24,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AccountSettingBody(),
+            AccountSettingBody(cubit: cubit),
             PreferencesSettingBody(),
             SupportSettingBody(),
             LogOutButton(),

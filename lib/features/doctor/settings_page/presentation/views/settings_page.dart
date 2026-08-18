@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/language/lang_keys.dart';
-import '../../../../../core/style/statics/app_statics.dart';
 import '../../../../../core/style/custom_widgets/custom_app_bar.dart';
+import '../../../../../core/style/statics/app_statics.dart';
+import '../../data/repo/get_d_data_from_shared_repo.dart';
 import '../cubits/doctor_setting_cubit/doctor_setting_cubit.dart';
 import '../refactor/doctor_settings_page_body.dart';
 
@@ -16,7 +17,10 @@ class SettingsPage extends StatelessWidget {
       appBar: CustomAppBar(title: LangKeys.settings),
       body: SafeArea(
         child: BlocProvider(
-          create: (context) => DoctorSettingCubit(isStudent: isStudent),
+          create: (context) => DoctorSettingCubit(
+            isStudent: isStudent,
+            repo: GetDDataFromSharedRepo(),
+          )..getDoctorData(),
           child: Padding(
             padding: AppPadding.symmetricPadding(),
             child: SingleChildScrollView(child: DoctorSettingsPageBody()),
