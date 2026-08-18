@@ -65,7 +65,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
     case RoutesNames.doctorHome:
       return BaseRoute(
-        page: DoctorHomeScreen(isAdmin: args?['isAdmin'] as bool? ?? false),
+        page: DoctorHomeScreen(
+          isAdmin: args?['isAdmin'] as bool? ?? false,
+          uid: args?['uid'] as String? ?? '',
+        ),
       );
 
     case RoutesNames.settingsScreen:

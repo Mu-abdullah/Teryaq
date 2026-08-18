@@ -33,7 +33,7 @@ class AuthBody extends StatelessWidget {
 
           context.pushReplacementNamed(
             RoutesNames.doctorHome,
-             
+            arguments: {'isAdmin': false, 'uid': state.user.user!.id},
           );
 
           debugPrint('AuthBody: AuthSuccess - User ID: ${state.user.user!.id}');
