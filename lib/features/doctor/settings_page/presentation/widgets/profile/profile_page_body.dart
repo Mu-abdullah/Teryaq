@@ -1,19 +1,20 @@
-import 'package:main_app/core/extextions/extentions.dart';
 import 'package:flutter/material.dart';
+import 'package:main_app/core/extextions/extentions.dart';
 
-import '../../../../../core/style/statics/app_statics.dart';
-import '../../../../../core/style/statics/image_test.dart';
-import '../widgets/doctor_info.dart';
+import '../../../../../../core/style/statics/app_statics.dart';
+import '../../../../../../core/style/statics/image_test.dart';
+import '../../../data/model/d_setting_model.dart';
+import 'doctor_info.dart';
 
 class ProfilePageBody extends StatelessWidget {
-  const ProfilePageBody({super.key});
-
+  const ProfilePageBody(this.doctor, {super.key});
+  final DSettingModel doctor;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: context.height(),
       width: context.width(),
-      decoration: _doctorImage(url: AppTest.bloger),
+      decoration: _doctorImage(url: doctor.dImage ?? AppTest.bloger),
       child: Stack(
         children: [
           Positioned(
@@ -33,7 +34,7 @@ class ProfilePageBody extends StatelessWidget {
                 ],
               ),
               padding: AppPadding.symmetricPadding(),
-              child: DoctorInfo(),
+              child: DoctorInfo(doctor: doctor),
             ),
           ),
         ],

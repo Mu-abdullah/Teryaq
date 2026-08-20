@@ -10,9 +10,10 @@ import '../../features/doctor/messenger/presentation/views/messenger_screen.dart
 import '../../features/doctor/messenger/presentation/widgets/chat_screen/chat_screen.dart';
 import '../../features/doctor/patient_list_screen/presentation/views/patient_list_screen.dart';
 import '../../features/doctor/patient_screen/presentation/views/patient_screen.dart';
-import '../../features/doctor/profile_page/presentation/views/profile_page.dart';
 import '../../features/doctor/search_screen/presentation/views/search_screen.dart';
+import '../../features/doctor/settings_page/data/model/d_setting_model.dart';
 import '../../features/doctor/settings_page/presentation/views/settings_page.dart';
+import '../../features/doctor/settings_page/presentation/widgets/profile/profile_page.dart';
 import '../../features/doctor/visits_screen/presentation/views/visits_screen.dart';
 import '../../features/user/user_home/presentation/views/user_patient_screen.dart';
 import '../../features/user/user_profile/presentation/views/user_profile.dart';
@@ -80,7 +81,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
 
     case RoutesNames.doctorProfile:
-      return BaseRoute(page: ProfilePage());
+      return BaseRoute(page: ProfilePage(doctor: args?['doctor'] as DSettingModel));
 
     case RoutesNames.patientScreen:
       return BaseRoute(page: PatientScreen());
