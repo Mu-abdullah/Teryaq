@@ -10,50 +10,54 @@ import '../../cubits/dr_home_cubit/dr_home_cubit.dart';
 
 class DoctorName extends StatelessWidget {
   const DoctorName({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DrHomeCubit, DrHomeState>(
       builder: (context, state) {
         return Container(
+          padding: AppPadding.symmetricPadding(),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Padding(
-            padding: AppPadding.symmetricPadding(),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AppText(LangKeys.welcome),
-                      state is DrHomeLoaded
-                          ? AppText(
-                              state.doctor.dName,
-                              tr: false,
-                              isTitle: true,
-                              isBold: true,
-                            )
-                          : state is DrHomeLoading
-                          ? ShimmerLoadingText()
-                          : state is DrHomeError
-                          ? AppText(state.message, isTitle: true, isBold: true)
-                          : AppText(
-                              " ",
-                              tr: false,
-                              isTitle: true,
-                              isBold: true,
-                            ),
-                    ],
-                  ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppText(LangKeys.welcome),
+                    _buildDoctorName(state),
+                  ],
                 ),
-                LiveClockWidget(),
-              ],
-            ),
+              ),
+              const LiveClockWidget(),
+            ],
           ),
         );
       },
     );
+  }
+
+  Widget _buildDoctorName(DrHomeState state) {
+    if (state is DrHomeLoaded) {
+      return AppText(
+        state.doctor.dName,
+        tr: false,
+        isTitle: true,
+        isBold: true,
+      );
+    }
+
+    if (state is DrHomeLoading) {
+      return ShimmerLoadingText();
+    }
+
+    if (state is DrHomeError) {
+      return AppText(state.message, isTitle: true, isBold: true);
+    }
+
+    return const AppText(' ', tr: false, isTitle: true, isBold: true);
   }
 }

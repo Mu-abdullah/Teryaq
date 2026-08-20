@@ -29,9 +29,6 @@ class DrHomeLoaded extends DrHomeState {
   final DHomeModel doctor;
 
   const DrHomeLoaded(this.doctor);
-
-  @override
-  List<Object?> get props => [doctor];
 }
 
 /// حالة الخطأ

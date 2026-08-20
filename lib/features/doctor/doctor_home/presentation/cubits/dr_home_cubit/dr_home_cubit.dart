@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,11 +54,43 @@ class DrHomeCubit extends Cubit<DrHomeState> {
   Future<DHomeModel?> _getCachedDoctor() async {
     try {
       final data = await SharedPref.getData(key: PrefKeys.doctorModel);
+
+      // ✅ Debug
+      debugPrint('Cache Data Type: ${data.runtimeType}');
+      debugPrint('Cache Data: $data');
+
       if (data != null) {
-        return DHomeModel.fromJson(data as Map<String, dynamic>);
+        // ✅ حل المشكلة: حول البيانات لـ Map عادية
+        Map<String, dynamic> safeData;
+
+        if (data is Map) {
+          // لو كانت Map (IdentityMap أو Map عادية)
+          safeData = Map<String, dynamic>.from(data);
+        } else if (data is String) {
+          // لو كانت String (JSON)
+          try {
+            final decoded = jsonDecode(data);
+            if (decoded is Map) {
+              safeData = Map<String, dynamic>.from(decoded);
+            } else {
+              debugPrint('❌ Decoded data is not a Map: ${decoded.runtimeType}');
+              return null;
+            }
+          } catch (e) {
+            debugPrint('❌ Error decoding JSON: $e');
+            return null;
+          }
+        } else {
+          debugPrint('❌ Unsupported data type: ${data.runtimeType}');
+          return null;
+        }
+
+        debugPrint('✅ Safe Data Keys: ${safeData.keys}');
+        return DHomeModel.fromJson(safeData);
       }
-    } catch (e) {
-      // تجاهل خطأ Cache
+    } catch (e, stackTrace) {
+      debugPrint('❌ Cache error: $e');
+      debugPrint('Stack trace: $stackTrace');
     }
     return null;
   }
@@ -85,11 +119,24 @@ class DrHomeCubit extends Cubit<DrHomeState> {
       },
       (doctor) {
         if (!isClosed) {
-          // حفظ في Cache
-          SharedPref.saveData(
-            key: PrefKeys.doctorModel,
-            value: doctor.toJson(),
-          );
+          // ✅ حفظ البيانات بشكل آمن
+          try {
+            final jsonData = doctor.toJson();
+            // تأكد من أن jsonData Map عادية
+            final safeJson = Map<String, dynamic>.from(jsonData);
+
+            // ✅ تحويل لـ JSON String عشان نحتفظ بالنوع
+            final jsonString = jsonEncode(safeJson);
+
+            SharedPref.saveData(
+              key: PrefKeys.doctorModel,
+              value: jsonString, // ✅ حفظ كـ String مش Map
+            );
+
+            debugPrint('✅ Doctor saved to cache successfully');
+          } catch (e) {
+            debugPrint('❌ Error saving to cache: $e');
+          }
           emit(DrHomeLoaded(doctor));
         }
       },
@@ -99,6 +146,8 @@ class DrHomeCubit extends Cubit<DrHomeState> {
   /// تحويل الـ Failure إلى رسالة
   String _mapFailureToMessage(dynamic failure) {
     // حسب نوع الـ Failure في مشروعك
+    if (failure is String) return failure;
+    if (failure is Exception) return failure.toString();
     return LangKeys.somethingWentWrong;
   }
 
