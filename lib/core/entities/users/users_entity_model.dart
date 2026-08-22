@@ -10,6 +10,8 @@ class UsersEntity {
   final String? image;
   final String role;
   final String? userId;
+  final String? birth;
+  final String? gender;
 
   const UsersEntity({
     this.id,
@@ -23,5 +25,7 @@ class UsersEntity {
     this.image,
     this.role = 'doctor',
     this.userId,
+    this.birth,
+    this.gender,
   });
 }
