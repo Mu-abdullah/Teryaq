@@ -50,7 +50,7 @@ class SickCount extends StatelessWidget {
         _buildCountCard(
           context: context,
           onTap: () => context.pushNamed(RoutesNames.patientScreen),
-          icon: HugeIcons.strokeRoundedUserGroup,
+          icon: HugeIcons.strokeRoundedUser,
           title: LangKeys.nextVisit,
           count: "",
           color: AppColors.blueAccent,
