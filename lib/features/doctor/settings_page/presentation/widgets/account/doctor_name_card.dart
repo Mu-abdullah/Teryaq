@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:main_app/core/extextions/extentions.dart';
 
+import '../../../../../../core/extextions/extentions.dart';
 import '../../../../../../core/language/lang_keys.dart';
 import '../../../../../../core/routes/routes_name.dart';
 import '../../../../../../core/style/widgets/app_text.dart';
@@ -16,10 +16,10 @@ class DoctorNameCard extends StatelessWidget {
       onTap: () {
         context.pushNamed(
           RoutesNames.doctorProfile,
-          arguments: cubit.doctorData?.toJson() ?? {},
+          arguments: {'doctor': cubit.doctorData},
         );
 
-        debugPrint("Doctor Data: ${cubit.doctorData?.toJson()}");
+        debugPrint("Doctor Data: ${cubit.doctorData}");
       },
       child: Row(
         spacing: 16,

@@ -3,6 +3,7 @@ import 'package:main_app/core/extextions/extentions.dart';
 
 import '../../../../../../core/language/lang_keys.dart';
 import '../../../../../../core/style/color/app_color.dart';
+import '../../../../../../core/style/widgets/app_space.dart';
 import '../../../../../../core/style/widgets/app_text.dart';
 import '../../../data/model/d_setting_model.dart';
 
@@ -16,6 +17,7 @@ class DoctorInfo extends StatelessWidget {
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          AppSpace(space: 20),
           AppText(
             doctor.dName,
             isTitle: true,
