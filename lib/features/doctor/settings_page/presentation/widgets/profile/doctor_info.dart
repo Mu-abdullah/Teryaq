@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:main_app/core/extextions/extentions.dart';
 
 import '../../../../../../core/language/lang_keys.dart';
@@ -9,62 +10,68 @@ import '../../../data/model/d_setting_model.dart';
 
 class DoctorInfo extends StatelessWidget {
   const DoctorInfo({super.key, required this.doctor});
+
   final DSettingModel doctor;
+
+  static const _textColor = AppColors.white;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 10,
         children: [
-          AppSpace(space: 20),
-          AppText(
-            doctor.name,
-            isTitle: true,
-            isBold: true,
-            tr: false,
-            color: AppColors.white,
+          const AppSpace(space: 8),
+
+          Row(
+            spacing: 10,
+            children: [
+              AppText(
+                doctor.name,
+                isTitle: true,
+                isBold: true,
+                tr: false,
+                color: _textColor,
+              ),
+
+              if (doctor.verified == true)
+                HugeIcon(icon: Icons.verified, color: _textColor),
+            ],
           ),
-          AppText(
-            doctor.specialization ?? "NULL",
-            tr: false,
-            color: AppColors.white,
-          ),
-          AppText(doctor.phone ?? "NULL", tr: false, color: AppColors.white),
+
+          _infoText(doctor.specialization),
+          _infoText(doctor.phone),
+
           AppText(
             LangKeys.about,
             isTitle: true,
             isBold: true,
-            color: AppColors.white,
+            color: _textColor,
           ),
-          AppText(
-            doctor.about ?? "NULL",
-            tr: false,
-            maxLines: 20,
-            color: AppColors.white,
-          ),
-          AppText(
-            "More than 7 years of experience",
-            tr: false,
 
+          _infoText(doctor.about, maxLines: 20),
+
+          _infoText('More than 7 years of experience', isBold: true),
+
+          AppText(
+            '+2003 ${context.tr(LangKeys.patient)}',
+            tr: false,
             isBold: true,
-            color: AppColors.white,
-          ),
-
-          Row(
-            children: [
-              Expanded(
-                child: AppText(
-                  "+2003 ${context.tr(LangKeys.patient)}",
-                  tr: false,
-                  color: AppColors.white,
-                  isBold: true,
-                ),
-              ),
-            ],
+            color: _textColor,
           ),
         ],
       ),
+    );
+  }
+
+  Widget _infoText(String? text, {int maxLines = 1, bool isBold = false}) {
+    return AppText(
+      text?.trim().isNotEmpty == true ? text! : 'NULL',
+      tr: false,
+      maxLines: maxLines,
+      isBold: isBold,
+      color: _textColor,
     );
   }
 }
