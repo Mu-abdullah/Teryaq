@@ -24,14 +24,14 @@ class DoctorNameCard extends StatelessWidget {
       child: Row(
         spacing: 16,
         children: [
-          DoctorSettingImage(imageUrl: cubit.doctorData?.dImage ?? ''),
+          DoctorSettingImage(imageUrl: cubit.doctorData?.image ?? ''),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppText(LangKeys.profile),
                 AppText(
-                  "Dr. ${cubit.doctorData?.dName ?? 'Name'}",
+                  "Dr. ${cubit.doctorData?.name ?? 'Name'}",
                   tr: false,
                   isBold: true,
                 ),

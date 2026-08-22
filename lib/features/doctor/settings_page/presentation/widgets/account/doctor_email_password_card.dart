@@ -15,7 +15,7 @@ class DoctorEmailAndPasswordCard extends StatelessWidget {
       children: [
         DoctorSettingCard(
           title: LangKeys.email,
-          value: cubit.doctorData?.dEmail ?? " ",
+          value: cubit.doctorData?.email ?? " ",
           icon: HugeIcons.strokeRoundedMail01,
         ),
         DoctorSettingCard(

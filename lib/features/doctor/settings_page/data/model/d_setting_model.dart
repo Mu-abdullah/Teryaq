@@ -2,32 +2,32 @@ import '../../../../../core/entities/users/users_entity_model.dart';
 
 class DSettingModel extends UsersEntity {
   DSettingModel({
-    required super.dName,
+    required super.name,
     required super.userId,
-    super.dId,
-    super.dCreatedAt,
-    super.dAbout,
-    super.dSpecialization,
-    super.dPhone,
-    super.dEmail,
-    super.dVerified,
-    super.dImage,
+    super.id,
+    super.createdAt,
+    super.about,
+    super.specialization,
+    super.phone,
+    super.email,
+    super.verified,
+    super.image,
     super.role = 'doctor',
   });
 
   // toJson
   Map<String, dynamic> toJson() {
     return {
-      'd_name': dName,
+      'name': name,
       'user_id': userId,
-      'd_id': dId,
-      'd_created_at': dCreatedAt?.toIso8601String(),
-      'd_about': dAbout,
-      'd_specialization': dSpecialization,
-      'd_phone': dPhone,
-      'd_email': dEmail,
-      'd_verified': dVerified,
-      'd_image': dImage,
+      'id': id,
+      'created_at': createdAt?.toIso8601String(),
+      'about': about,
+      'specialization': specialization,
+      'phone': phone,
+      'email': email,
+      'verified': verified,
+      'image': image,
       'role': role,
     };
   }
@@ -35,18 +35,18 @@ class DSettingModel extends UsersEntity {
   // fromJson
   factory DSettingModel.fromJson(Map<String, dynamic> json) {
     return DSettingModel(
-      dName: json['d_name'],
+      name: json['name'],
       userId: json['user_id'],
-      dId: json['d_id'],
-      dCreatedAt: json['d_created_at'] != null
-          ? DateTime.parse(json['d_created_at'])
+      id: json['id'],
+      createdAt: json['created_at'] != null
+          ? DateTime.parse(json['created_at'])
           : null,
-      dAbout: json['d_about'],
-      dSpecialization: json['d_specialization'],
-      dPhone: json['d_phone'],
-      dEmail: json['d_email'],
-      dVerified: json['d_verified'],
-      dImage: json['d_image'],
+      about: json['about'],
+      specialization: json['specialization'],
+      phone: json['phone'],
+      email: json['email'],
+      verified: json['verified'],
+      image: json['image'],
       role: json['role'],
     );
   }

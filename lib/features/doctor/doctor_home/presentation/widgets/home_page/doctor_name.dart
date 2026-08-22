@@ -42,12 +42,7 @@ class DoctorName extends StatelessWidget {
 
   Widget _buildDoctorName(DrHomeState state) {
     if (state is DrHomeLoaded) {
-      return AppText(
-        state.doctor.dName,
-        tr: false,
-        isTitle: true,
-        isBold: true,
-      );
+      return AppText(state.doctor.name, tr: false, isTitle: true, isBold: true);
     }
 
     if (state is DrHomeLoading) {

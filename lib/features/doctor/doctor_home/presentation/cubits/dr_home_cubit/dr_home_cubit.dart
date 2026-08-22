@@ -197,5 +197,5 @@ class DrHomeCubit extends Cubit<DrHomeState> {
   bool get hasError => state is DrHomeError;
 
   /// اسم الدكتور
-  String get doctorName => currentDoctor?.dName ?? 'طبيب';
+  String get doctorName => currentDoctor?.name ?? 'طبيب';
 }

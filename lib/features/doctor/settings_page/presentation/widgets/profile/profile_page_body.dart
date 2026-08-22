@@ -15,7 +15,7 @@ class ProfilePageBody extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: _doctorImage(url: doctor.dImage ?? AppTest.bloger),
+      decoration: _doctorImage(url: doctor.image ?? AppTest.bloger),
       child: Stack(
         children: [
           Positioned(

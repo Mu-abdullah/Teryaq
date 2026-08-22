@@ -19,18 +19,18 @@ class DoctorInfo extends StatelessWidget {
         children: [
           AppSpace(space: 20),
           AppText(
-            doctor.dName,
+            doctor.name,
             isTitle: true,
             isBold: true,
             tr: false,
             color: AppColors.white,
           ),
           AppText(
-            doctor.dSpecialization ?? "NULL",
+            doctor.specialization ?? "NULL",
             tr: false,
             color: AppColors.white,
           ),
-          AppText(doctor.dPhone ?? "NULL", tr: false, color: AppColors.white),
+          AppText(doctor.phone ?? "NULL", tr: false, color: AppColors.white),
           AppText(
             LangKeys.about,
             isTitle: true,
@@ -38,7 +38,7 @@ class DoctorInfo extends StatelessWidget {
             color: AppColors.white,
           ),
           AppText(
-            doctor.dAbout ?? "NULL",
+            doctor.about ?? "NULL",
             tr: false,
             maxLines: 20,
             color: AppColors.white,

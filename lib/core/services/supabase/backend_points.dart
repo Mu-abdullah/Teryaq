@@ -1,5 +1,5 @@
 class BackendPoint {
   static const imageBucket = 'images';
 
-  static const users = 'users';
+  static const doctors = 'users';
 }
