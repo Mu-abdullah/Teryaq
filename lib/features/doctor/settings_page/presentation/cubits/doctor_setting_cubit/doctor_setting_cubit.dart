@@ -11,11 +11,13 @@ class DoctorSettingCubit extends Cubit<DoctorSettingState> {
   bool isStudent;
   GetDDataFromSharedRepo repo;
   DoctorSettingCubit({required this.isStudent, required this.repo})
-    : super(DoctorSettingInitial());
+    : super(DoctorSettingInitial()) {
+    getDoctorData();
+  }
 
   static DoctorSettingCubit get(BuildContext context) =>
       BlocProvider.of(context);
-  late DSettingModel? doctorData;
+  DSettingModel? doctorData;
 
   Future<void> getDoctorData() async {
     emit(DoctorSettingLoading());

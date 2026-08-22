@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../core/language/lang_keys.dart';
 import '../../../../../../core/style/custom_widgets/custom_shimmer.dart';
-import '../../../../../../core/style/custom_widgets/live_clock/live_clock_ui.dart';
+import '../../../../../../core/style/custom_widgets/live_clock_ui.dart';
 import '../../../../../../core/style/statics/app_statics.dart';
 import '../../../../../../core/style/widgets/app_text.dart';
 import '../../cubits/dr_home_cubit/dr_home_cubit.dart';

@@ -8,9 +8,10 @@ import 'doctor_info.dart';
 
 class ProfilePageBody extends StatelessWidget {
   const ProfilePageBody(this.doctor, {super.key});
-  final DSettingModel doctor;
+  final Map<String, dynamic> doctor;
   @override
   Widget build(BuildContext context) {
+    final doctor = DSettingModel.fromJson(this.doctor);
     return Container(
       height: context.height(),
       width: context.width(),

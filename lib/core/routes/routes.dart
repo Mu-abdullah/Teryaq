@@ -11,7 +11,6 @@ import '../../features/doctor/messenger/presentation/widgets/chat_screen/chat_sc
 import '../../features/doctor/patient_list_screen/presentation/views/patient_list_screen.dart';
 import '../../features/doctor/patient_screen/presentation/views/patient_screen.dart';
 import '../../features/doctor/search_screen/presentation/views/search_screen.dart';
-import '../../features/doctor/settings_page/data/model/d_setting_model.dart';
 import '../../features/doctor/settings_page/presentation/views/settings_page.dart';
 import '../../features/doctor/settings_page/presentation/widgets/profile/profile_page.dart';
 import '../../features/doctor/visits_screen/presentation/views/visits_screen.dart';
@@ -81,7 +80,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
 
     case RoutesNames.doctorProfile:
-      return BaseRoute(page: ProfilePage(doctor: args?['doctor'] as DSettingModel));
+      return BaseRoute(
+        page: ProfilePage(
+          doctor: args?['doctor'] as Map<String, dynamic>? ?? {},
+        ),
+      );
 
     case RoutesNames.patientScreen:
       return BaseRoute(page: PatientScreen());

@@ -14,12 +14,17 @@ class DoctorNameCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.pushNamed(RoutesNames.doctorProfile);
+        context.pushNamed(
+          RoutesNames.doctorProfile,
+          arguments: cubit.doctorData?.toJson() ?? {},
+        );
+
+        debugPrint("Doctor Data: ${cubit.doctorData?.toJson()}");
       },
       child: Row(
         spacing: 16,
         children: [
-          DoctorSettingImage(),
+          DoctorSettingImage(imageUrl: cubit.doctorData?.dImage ?? ''),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -6,7 +6,7 @@ import '../../../../../core/extextions/extentions.dart';
 import '../../../../../core/language/lang_keys.dart';
 import '../../../../../core/style/color/app_color.dart';
 import '../../../../../core/style/custom_widgets/custom_app_bar.dart';
-import '../../../../../core/style/custom_widgets/live_clock/live_clock_ui.dart';
+import '../../../../../core/style/custom_widgets/live_clock_ui.dart';
 import '../../../../../core/style/statics/app_statics.dart';
 
 class UserCustomAppBar extends StatelessWidget implements PreferredSizeWidget {

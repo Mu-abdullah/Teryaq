@@ -20,7 +20,7 @@ class SettingsPage extends StatelessWidget {
           create: (context) => DoctorSettingCubit(
             isStudent: isStudent,
             repo: GetDDataFromSharedRepo(),
-          )..getDoctorData(),
+          ),
           child: Padding(
             padding: AppPadding.symmetricPadding(),
             child: SingleChildScrollView(child: DoctorSettingsPageBody()),

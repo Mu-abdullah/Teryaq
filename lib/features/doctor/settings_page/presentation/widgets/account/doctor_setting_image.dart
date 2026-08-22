@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/style/statics/image_test.dart';
-
 class DoctorSettingImage extends StatelessWidget {
-  const DoctorSettingImage({super.key, this.size = 56});
+  const DoctorSettingImage({required this.imageUrl, super.key, this.size = 56});
   final double size;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +12,7 @@ class DoctorSettingImage extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: NetworkImage(AppTest.bloger),
+          image: NetworkImage(imageUrl),
           fit: BoxFit.cover,
         ),
       ),
