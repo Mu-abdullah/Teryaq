@@ -1,7 +1,8 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
-import 'package:main_app/core/language/lang_keys.dart';
 import 'package:flutter/material.dart';
+import 'package:main_app/core/language/lang_keys.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 part 'speech_state.dart';
@@ -13,13 +14,13 @@ class SpeechCubit extends Cubit<SpeechState> {
   final Duration _silenceDuration = const Duration(seconds: 2);
 
   SpeechCubit()
-      : super(
-          SpeechState(
-            isListening: false,
-            recognizedText: 'Initializing...',
-            selectedLanguage: 'en-US',
-          ),
-        ) {
+    : super(
+        SpeechState(
+          isListening: false,
+          recognizedText: 'Initializing...',
+          selectedLanguage: 'en-US',
+        ),
+      ) {
     _initSpeech();
   }
 
@@ -62,18 +63,28 @@ class SpeechCubit extends Cubit<SpeechState> {
   void startListening() {
     if (!state.isListening &&
         state.recognizedText != 'Speech recognition not available') {
+      // Create listen options with the new parameter
+      final listenOptions = stt.SpeechListenOptions(
+        localeId: state.selectedLanguage,
+        partialResults: true,
+        listenMode: stt
+            .ListenMode
+            .dictation, // or confirmation/search based on your needs
+        cancelOnError: false,
+      );
+
       _speech.listen(
         onResult: (result) {
           if (!isClosed) {
             emit(state.copyWith(recognizedText: result.recognizedWords));
           }
         },
-        localeId: state.selectedLanguage,  // ✅ التعديل هنا
         onSoundLevelChange: (level) {
           if (!isClosed) {
             _onSoundLevelChange(level);
           }
         },
+        listenOptions: listenOptions, // ✅ Using the new parameter
       );
       if (!isClosed) {
         emit(state.copyWith(isListening: true));

@@ -18,25 +18,34 @@ class ConnectionController {
   }
 
   bool isInternetConnected(List<ConnectivityResult> results) {
-    if (results.contains(ConnectivityResult.none) && results.length == 1) {
-      isConnected.value = false;
-      return false;
-    } else if (results.contains(ConnectivityResult.mobile) ||
-        results.contains(ConnectivityResult.wifi)) {
-      isConnected.value = true;
-      return true;
-    }
-    isConnected.value = false;
-    return false;
+    // Check if connected to any network
+    final bool hasNetwork = results.any(
+      (result) =>
+          result == ConnectivityResult.mobile ||
+          result == ConnectivityResult.wifi,
+    );
+
+    isConnected.value = hasNetwork;
+    return hasNetwork;
   }
 
   Future<void> checkConnection() async {
     try {
       final connectivityResult = await Connectivity().checkConnectivity();
-      if (connectivityResult == ConnectivityResult.none) {
+
+      // Check if we have mobile or wifi connection
+      final bool hasNetwork = connectivityResult.any(
+        (result) =>
+            result == ConnectivityResult.mobile ||
+            result == ConnectivityResult.wifi,
+      );
+
+      if (!hasNetwork) {
         isConnected.value = false;
         return;
       }
+
+      // Verify actual internet access with a ping
       final result = await InternetAddress.lookup('google.com').timeout(
         const Duration(seconds: 5),
         onTimeout: () => throw Exception('Timeout'),

@@ -24,22 +24,33 @@ void selectData({
       actionTextStyle: customTextStyle(context),
       dateTimePickerTextStyle: customTextStyle(context),
     ),
-    buttonBuilder: (w ,c){
-      return AppText(
-      LangKeys.chooseDate,
-      color: Colors.white,
-      textAlign: TextAlign.center,
-    );
-    }  ,
-    buttonStyle: const BoxDecoration(
-      color: Colors.black,
-      borderRadius: BorderRadius.all(Radius.circular(10)),
-    ),
-    onChange: (index) {},
-    onSubmit: (index) async {
-      var date = convertDateToArabic(index.toString(), format: format);
-      controller.text = date;
+    // ✅ Updated: buttonBuilder now handles both button appearance AND onSubmit
+    buttonBuilder: (context, onPressed) {
+      return GestureDetector(
+        onTap: () {
+          // Handle the submit action here
+          var date = convertDateToArabic(onPressed.toString(), format: format);
+          controller.text = date;
+          // Close the picker
+          Navigator.pop(context as BuildContext);
+        },
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+          child: AppText(
+            LangKeys.chooseDate,
+            color: Colors.white,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
     },
+    onChange: (index) {},
     bottomPickerTheme: BottomPickerTheme.blue,
   );
 

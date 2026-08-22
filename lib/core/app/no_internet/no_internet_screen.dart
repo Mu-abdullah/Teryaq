@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:main_app/core/extextions/extentions.dart';
-
 import 'package:hugeicons/hugeicons.dart';
-
 import 'package:lottie/lottie.dart';
+import 'package:main_app/core/extextions/extentions.dart';
 
 import '../../language/lang_keys.dart';
 import '../../style/color/app_color.dart';
+import '../../style/custom_widgets/custom_snack_bar.dart';
 import '../../style/statics/image_test.dart';
 import '../../style/widgets/app_button.dart';
-import '../../style/custom_widgets/custom_snack_bar.dart';
 import 'connection_controller/connection_controller.dart';
 
 class NoInternetScreen extends StatelessWidget {
@@ -23,7 +21,7 @@ class NoInternetScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: 10,
         children: [
-          Lottie.asset(AppJson.noInternet),
+          Lottie.asset(AppJson.noInternet, fit: BoxFit.fitHeight),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: AppButton(

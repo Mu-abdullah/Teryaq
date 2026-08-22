@@ -21,6 +21,7 @@ class LangKeys {
   static const String comingSoon = 'comingSoon';
   static const String facingTrouble = 'facingTrouble';
   static const String facingTroubleDescription = 'facingTroubleDescription';
+  static const String internetRestored = 'internetRestored';
 
 
 
