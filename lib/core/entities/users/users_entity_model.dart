@@ -1,4 +1,4 @@
-class DoctorEntity {
+class UsersEntity {
   final String? dId;
   final DateTime? dCreatedAt;
   final String dName;
@@ -11,7 +11,7 @@ class DoctorEntity {
   final String role;
   final String? userId;
 
-  const DoctorEntity({
+  const UsersEntity({
     this.dId,
     this.dCreatedAt,
     required this.dName,

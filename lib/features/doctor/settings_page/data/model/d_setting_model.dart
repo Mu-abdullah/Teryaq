@@ -1,6 +1,6 @@
-import '../../../../../core/entities/doctor/doctor_entity_model.dart';
+import '../../../../../core/entities/users/users_entity_model.dart';
 
-class DSettingModel extends DoctorEntity {
+class DSettingModel extends UsersEntity {
   DSettingModel({
     required super.dName,
     required super.userId,

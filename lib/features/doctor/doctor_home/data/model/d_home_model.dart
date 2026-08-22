@@ -1,6 +1,6 @@
-import '../../../../../core/entities/doctor/doctor_entity_model.dart';
+import '../../../../../core/entities/users/users_entity_model.dart';
 
-class DHomeModel extends DoctorEntity {
+class DHomeModel extends UsersEntity {
   DHomeModel({
     required super.dName,
     required super.userId,
@@ -38,7 +38,9 @@ class DHomeModel extends DoctorEntity {
       dName: json['d_name'],
       userId: json['user_id'],
       dId: json['d_id'],
-      dCreatedAt: json['d_created_at'] != null ? DateTime.parse(json['d_created_at']) : null,
+      dCreatedAt: json['d_created_at'] != null
+          ? DateTime.parse(json['d_created_at'])
+          : null,
       dAbout: json['d_about'],
       dSpecialization: json['d_specialization'],
       dPhone: json['d_phone'],
