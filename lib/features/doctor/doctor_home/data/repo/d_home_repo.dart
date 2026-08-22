@@ -17,7 +17,7 @@ class DHomeRepo {
   Future<Either<CustomError, DHomeModel>> getDoctorName(String userId) async {
     try {
       var response = await service.fetchCollection(
-        collection: BackendPoint.doctors,
+        collection: BackendPoint.users,
         fields: [
           'd_name',
           'user_id',
